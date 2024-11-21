@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('notas', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('aluno_id');
-            $table->string('portugues')->nullable();
-            $table->string('matematica')->nullable();
-            $table->string('ciencias')->nullable();
-            $table->string('historia')->nullable();
-            $table->string('ingles')->nullable();
-            $table->string('geografia')->nullable();
-            $table->foreign('aluno_id')->references('id')->on('alunos')->onDelete('cascade');
+            $table->float('portugues', 2, 1)->nullable();
+            $table->float('matematica', 2, 1)->nullable();
+            $table->float('ciencias', 2, 1)->nullable();
+            $table->float('historia', 2, 1)->nullable();
+            $table->float('ingles', 2, 1)->nullable();
+            $table->float('geografia', 2, 1)->nullable();
+            $table->foreign('aluno_id', 2, 1)->references('id')->on('alunos')->onDelete('cascade');
             $table->timestamps();
         });
     }
