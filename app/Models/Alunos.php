@@ -2,11 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Enums\NivelEnsino;
 
 class Alunos extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'nome',
         'matricula',
