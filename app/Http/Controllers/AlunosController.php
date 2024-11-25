@@ -42,7 +42,8 @@ class AlunosController
 
     public function show(string $id)
     {
-        //
+        $aluno = Alunos::find($id);
+        return ['success' => 'Aluno listado com sucesso!', 'aluno' => $aluno->only(['nome', 'matricula', 'ano', 'nivel_ensino'])];
     }
 
     public function edit(string $id)
