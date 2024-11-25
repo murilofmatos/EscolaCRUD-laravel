@@ -72,6 +72,8 @@ class AlunosController
 
     public function destroy(string $id)
     {
-        //
+        $aluno = Alunos::findOrFail($id);
+        $aluno->delete();
+        return ['success' => 'Aluno deletado com sucesso!'];
     }
 }
