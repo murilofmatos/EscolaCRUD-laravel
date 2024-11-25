@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Alunos;
 use Illuminate\Validation\Rule;
 use App\Enums\NivelEnsino;
 
-class AlunosController extends Controller
+class AlunosController
 {
     private function matriculaGen($nome){
         $nomesArr = explode(' ', $nome);
