@@ -25,7 +25,7 @@ class AlunosController
 
     public function create()
     {
-        //
+        return view('create');
     }
 
     public function store(Request $request)
@@ -54,7 +54,7 @@ class AlunosController
 
     public function edit(string $id)
     {
-        //
+        return view('edit');
     }
 
     public function update(Request $request, string $id)
