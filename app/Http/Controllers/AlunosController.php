@@ -59,7 +59,15 @@ class AlunosController
 
     public function update(Request $request, string $id)
     {
-
+        $validated = $request->validate([
+            'nome' => 'nullable|string|max:255',
+            'nivel_ensino' => 'nullable|string|max:20',
+            'ano' => 'nullable|string|max:2'
+        ]);
+        $newData = array_filter($validated);
+        Alunos::where('id', $id)->update($newData);
+        $alunoUpdated = Alunos::find($id);
+        return $alunoUpdated;
     }
 
     public function destroy(string $id)
