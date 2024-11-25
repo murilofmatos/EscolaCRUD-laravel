@@ -46,6 +46,12 @@ class AlunosController
         return ['success' => 'Aluno listado com sucesso!', 'aluno' => $aluno->only(['nome', 'matricula', 'ano', 'nivel_ensino'])];
     }
 
+    public function showByMat(string $matricula)
+    {
+        $aluno = Alunos::where('matricula', $matricula)->first();
+        return ['success' => 'Aluno listado com sucesso!', 'aluno' => $aluno->only(['nome', 'matricula', 'ano', 'nivel_ensino'])];
+    }
+
     public function edit(string $id)
     {
         //
@@ -53,7 +59,7 @@ class AlunosController
 
     public function update(Request $request, string $id)
     {
-        //
+
     }
 
     public function destroy(string $id)

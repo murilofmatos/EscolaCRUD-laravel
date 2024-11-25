@@ -15,3 +15,5 @@ Route::get('/', function () {
 // DELETE  /alunos/{id}
 // GET     /alunos/{id}/edit
 Route::resource('alunos', AlunosController::class);
+
+Route::get('/alunos/find/{matricula}', [AlunosController::class, 'showByMat']);
