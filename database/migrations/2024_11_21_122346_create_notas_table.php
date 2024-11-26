@@ -12,14 +12,15 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('notas', function (Blueprint $table) {
-            $table->id();
             $table->unsignedBigInteger('aluno_id');
+            $table->unsignedTinyInteger('bimestre');
             $table->float('portugues', 2, 1)->nullable();
             $table->float('matematica', 2, 1)->nullable();
             $table->float('ciencias', 2, 1)->nullable();
             $table->float('historia', 2, 1)->nullable();
             $table->float('ingles', 2, 1)->nullable();
             $table->float('geografia', 2, 1)->nullable();
+            $table->primary(['aluno_id', 'bimestre']);
             $table->foreign('aluno_id', 2, 1)->references('id')->on('alunos')->onDelete('cascade');
             $table->timestamps();
         });

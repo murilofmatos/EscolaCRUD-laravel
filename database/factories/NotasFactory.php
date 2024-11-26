@@ -17,13 +17,14 @@ class NotasFactory extends Factory
     public function definition(): array
     {
         return [
-            'aluno_id' => Alunos::query()->inRandomOrder()->value('id'),
+            'aluno_id' => null,
             'portugues' => $this->faker->numberBetween(0, 20)/2,
             'matematica' => $this->faker->numberBetween(0, 20)/2,
             'ciencias' => $this->faker->numberBetween(0, 20)/2,
             'historia' => $this->faker->numberBetween(0, 20)/2,
             'ingles' => $this->faker->numberBetween(0, 20)/2,
             'geografia' => $this->faker->numberBetween(0, 20)/2,
+            'bimestre' => $this->faker->numberBetween(1,4)
         ];
     }
 }

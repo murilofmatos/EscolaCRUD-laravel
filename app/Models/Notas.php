@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Notas extends Model
 {
     use HasFactory;
-    
+
     protected $fillable = [
         'aluno_id',
         'portugues',
@@ -16,8 +16,11 @@ class Notas extends Model
         'ciencias',
         'historia',
         'ingles',
-        'geografia'
+        'geografia',
+        'bimestre'
     ];
+
+    public $incrementing = false;
 
     public function alunos()
     {
