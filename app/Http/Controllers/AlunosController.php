@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Alunos;
-use Illuminate\Validation\Rule;
 use App\Enums\NivelEnsino;
 
 class AlunosController
